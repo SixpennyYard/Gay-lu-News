@@ -18,9 +18,10 @@ This project is a Flask-based web application that allows users to generate and 
   
 - **Werkzeug**: Used for password hashing and verification.
   
-- **HTML/CSS**: Frontend design and layout are created using HTML and CSS.
+- **HTML/CSS**: Frontend design and layout are created using HTML and CSS. *(@Akok0 and Achille, two classmate, helped me)*
+
   
-- **CSV Data Storage**: Article data is stored in CSV files for simplicity. A more scalable solution like a database can be implemented for production use.
+- **CSV Data Storage**: Article data is stored in CSV files for simplicity. That was a constraint imposed by my professor, requiring the use of CSV. However, for production use, a more scalable solution, such as implementing a database, can be considered.
 
 ## Usage
 
