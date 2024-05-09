@@ -1,0 +1,77 @@
+header{
+   background-color: #01000d;
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   height: 50px;
+   z-index: 50;
+}
+.return{
+    position: relative;
+    left: 1%;
+    height: 25px;
+    display: inline-block;
+    top: 22%;
+}
+.name{
+    font-family: monospace;
+    color: white;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    text-decoration:none
+}
+hr{
+    border: none;
+    background-color: white;
+    margin: 0px;
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 20%;
+    top: 0px;
+}
+.recherche{
+    background-color: #faf9ff;
+    text-align: center;
+    height: 30px;
+    width: 400px;
+    border-radius: 15px;
+    position: fixed;
+    left: 36%;
+    top: 1%;
+}
+
+.loginRegister{
+    display: flex;
+    justify-content: flex-end;
+    height: 34px;
+    width: 205px;
+    position: absolute;
+    top: 25%;
+    left: 85%;
+}
+.loginRegister a {
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.colorIN{
+    border:none;
+    border-radius: 15%;
+    width: 45px;
+    padding: 0px;
+}
+
+h1{
+    margin: 0px;
+}
+
+.Hbutton{
+    width: 30px;
+    height: 30px;
+}

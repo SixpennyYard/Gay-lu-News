@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/headerStyle.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styleArticle.css') }}">
+        <script src="{{ url_for('static', filename='JS/script.js') }}"></script>
+    </head>
+    <body>
+        {% if header %}
+            {% include 'header.html' %}
+        {% endif %}
+        {% if user.is_authenticated and user._username == author and header %}
+            <a class="edit-button-article" href="{{ url_for('modifier_article', title=title) }}"><img src="{{ url_for('static', filename='img/edit.png') }}" alt="Modifier"></a>
+        {% endif %}
+        <br>
+        <hr class="hrArticle">
+        <h1 class="titre">{{ title }}</h1>
+        <div class="article-content">
+            {{ user_article | safe }}
+        </div>
+    </body>
+    <footer>
+        <hr class="hrArticle">
+        <p>Article de {{ author }} paru le {{ date }}</p>
+    </footer>
+</html>

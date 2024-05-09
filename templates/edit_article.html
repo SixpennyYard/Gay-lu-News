@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier un article</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/headerStyle.css') }}">
+    <script src="{{ url_for('static', filename='JS/script.js') }}"></script>
+</head>
+<body id="bodyID">
+{% include 'header.html' %}
+<section class="buttonStyle">
+    <button type="button" onclick="titleON()">H1</button>
+    <button type="button" onclick="subtitleON()">H2</button>
+    <button type="button" onclick="italiqueON()"><i>italique</i></button>
+    <button onclick="ligneON()"><u>souligner</u></button>
+    <button onclick="grasON()"><b>gras</b></button>
+    <button onclick="colorON()">couleur</button>
+    <input type="color" class="colorTexte" id="colorTXT">
+</section>
+{% if error %}
+    <span style="color: red; font-size: 12px;">* {{ error }}</span>
+{% endif %}
+<form method="post" class="formulaire">
+    <ul>
+        <li>
+            <input type="text" id="title" name="title" class="resume" placeholder=" Titre" value="{{ article.title }}" required/>
+        </li>
+        <li>
+            <input type="text" id="summary" name="summary" class="resume" placeholder="Résumé" value="{{ article.summary }}" required/>
+        </li>
+        <li class="LIText">
+            <textarea id="text" name="user_article" placeholder=" Article">{{ article.user_article }}</textarea>
+        </li>
+        <li>
+            <button type="submit" class="submit">Mettre à jour</button>
+        </li>
+    </ul>
+</form>
+</body>
+</html>

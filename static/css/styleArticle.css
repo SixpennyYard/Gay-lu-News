@@ -1,0 +1,55 @@
+iframe{
+    margin: 15px;
+    border-radius: 20px;
+}
+.article-content {
+    word-break: break-all;
+    font-family: "Goudy Old Style";
+    margin-left: 70px;
+    margin-right: 70px;
+    hyphens: auto;
+}
+
+.titre{
+    font-size: 325%;
+    text-align: center;
+    font-family: "Goudy Old Style";
+}
+
+h2{
+    font-size: 225%;
+    margin-left: 45px;
+}
+
+h3{
+    font-size: 150%;
+    margin-left: 35px;
+}
+
+.hrArticle{
+    background-color: #000000;
+    position: static;
+    margin-top: 50px;
+    margin-left: 8%;
+    margin-bottom: 15px;
+    height: 3px;
+    width: 85%;
+}
+
+footer {
+    display: inline;
+    text-align: center;
+}
+
+.edit-button-article img{
+    position: absolute;
+    right: 0px;
+    margin-top: 50px;
+    width: 55px;
+    height: auto;
+}
+
+.edit-button-article img:hover{
+    width: 57px;
+    height: auto;
+}

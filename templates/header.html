@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+         <header>
+            <a class="return" href="{{ url_for('accueil') }}"><img src="{{ url_for('static', filename='img/maison.png') }}" alt="accueil" width="25px" ></a>
+            <a href="{{ url_for('accueil') }}" class="name"><h1>Gay-lu News</h1></a>
+            <hr>
+            <form action="{{ url_for('search') }}" method="post">
+                <input type="search" name="search" placeholder="chercher un article" class="recherche">
+            </form>
+            <div class="loginRegister">
+                <input type="color" class="colorIN" id="colorIN" value="#ffffff">
+                <a href="{{ url_for('formulaire') }}"><img src="{{ url_for('static', filename='img/+.png') }}" alt="+" title="creer un article" class="Hbutton"></a>
+                {% if not user.is_authenticated %}
+                    <a href="{{ url_for('register') }}"><img src="{{ url_for('static', filename='img/register.png') }}" alt="singin" title="creer un compte" class="Hbutton"></a>
+                    <a href="{{ url_for('login') }}"><img src="{{ url_for('static', filename='img/login.png') }}" alt="signIn" title="se connecter" class="Hbutton"></a>
+                {% endif %}
+                <a href="{{ url_for('profil') }}"><img src="{{ url_for('static', filename='img/profil.png') }}" alt="profil" title="profil" class="Hbutton"></a>
+            </div>
+        </header>
+    </body>
+</html>

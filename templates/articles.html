@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultats de la recherche</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/headerStyle.css') }}">
+    <script src="{{ url_for('static', filename='JS/script.js') }}"></script>
+</head>
+<body id="bodyID">
+    {% include 'header.html' %}
+    <section class="article">
+        {% for article in articles %}
+            <div class="article-preview" onclick="showOverlay('{{ loop.index }}')">
+                <div class="overlay" id="overlay-{{ loop.index }}">
+                    <a href="{{ url_for('article', title=title, header=True) }}" class="redirect-button"><img src="{{ url_for('static', filename='img/arrow_right.png') }}" alt="redirect"></a>
+                    <iframe src="{{ url_for('article', title=article['title'], header=False) }}" frameborder="0"></iframe>
+                </div>
+                <div class="article-info">
+                    {% if user.is_authenticated and user._username == article['author'] %}
+                        <form class="delete-form-mobile" action="{{ url_for('delete_article', title=article['title']) }}" method="post">
+                            <input type="image" src="{{ url_for('static', filename='img/delete.png') }}" alt="Supprimer">
+                        </form>
+                    {% endif %}
+                    <p class="title">{{ article['title'] }}</p>
+                    <p class="summary">{{ article['summary'] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+    <script>
+    function showOverlay(index) {
+        // affiche ou non la prévisualisation d'un article
+        var overlay = document.getElementById("overlay-" + index);
+        overlay.classList.toggle("show-overlay");
+    }
+    </script>
+</body>
+</html>

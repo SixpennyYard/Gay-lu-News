@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/headerStyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleProfil.css') }}">
+    <script src="{{ url_for('static', filename='JS/script.js') }}"></script>
+    <title>Profil</title>
+</head>
+<body>
+    <a href="{{ url_for('accueil') }}" class="return"><img src="{{ url_for('static', filename='img/fleche.png') }}" alt="return" height="25px" width="50px"></a>
+    {% include 'header.html' %}
+    <div class="container">
+        <div class="profile-info">
+            <h2>Profil</h2>
+            <div class="spacer"></div> 
+            <h3>Informations :</h3> 
+            <p> </p>
+
+            <p><strong>Nom d'utilisateur :</strong> {{ user._username }}</p>
+            <p><strong>Adresse mail :</strong> {{ user.get_email }}</p> 
+            <div class="spacer2"></div> 
+            <a href="{{ url_for('logout') }}" class="logout-link">Se déconnecter</a> 
+        </div>
+    </div>
+</body>
+</html>
