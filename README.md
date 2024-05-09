@@ -1,6 +1,7 @@
 # Article Generation Website
 
 This project is a Flask-based web application that allows users to generate and manage articles. It provides functionalities for user registration, login, article creation, modification, deletion, and search.
+It was created by three high school students: @Akok0 and Achille worked on the frontend, while I contributed to both the frontend and backend.
 
 ## Features
 
